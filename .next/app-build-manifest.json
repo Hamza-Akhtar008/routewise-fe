@@ -16,16 +16,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboards)/layout.js"
     ],
-    "/(dashboards)/admin-dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/admin-dashboard/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
     "/(dashboards)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,6 +25,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboards)/admin-dashboard/layout.js"
+    ],
+    "/(dashboards)/admin-dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboards)/admin-dashboard/page.js"
     ],
     "/(dashboards)/admin-dashboard/newsletter/page": [
       "static/chunks/webpack.js",
@@ -50,6 +45,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboards)/admin-dashboard/schedule/page.js"
+    ],
+    "/(dashboards)/admin-dashboard/drivers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboards)/admin-dashboard/drivers/page.js"
+    ],
+    "/(dashboards)/admin-dashboard/performance/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboards)/admin-dashboard/performance/page.js"
     ],
     "/(dashboards)/admin-dashboard/routes/page": [
       "static/chunks/webpack.js",
@@ -90,56 +95,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboards)/admin-dashboard/expenses/page.js"
-    ],
-    "/(dashboards)/admin-dashboard/handbooks/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/admin-dashboard/handbooks/page.js"
-    ],
-    "/(dashboards)/manager-dashboard/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/layout.js"
-    ],
-    "/(dashboards)/manager-dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/page.js"
-    ],
-    "/(dashboards)/manager-dashboard/tasks/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/tasks/page.js"
-    ],
-    "/(dashboards)/manager-dashboard/schedule/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/schedule/page.js"
-    ],
-    "/(dashboards)/manager-dashboard/drivers/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/drivers/page.js"
-    ],
-    "/(dashboards)/manager-dashboard/performance/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/manager-dashboard/performance/page.js"
-    ],
-    "/(dashboards)/driver-dashboard/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/driver-dashboard/layout.js"
-    ],
-    "/(dashboards)/driver-dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/driver-dashboard/page.js"
-    ],
-    "/(dashboards)/driver-dashboard/tow-service/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboards)/driver-dashboard/tow-service/page.js"
     ]
   }
 }

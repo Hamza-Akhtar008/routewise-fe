@@ -44,7 +44,7 @@ export default function TowServicePage() {
                              <span>Unit #104 - Engine Failure</span>
                         </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2">
                         <Button variant="outline" size="sm" className="w-full">
                             <Phone className="mr-2 h-3 w-3" /> Contact Driver
                         </Button>
