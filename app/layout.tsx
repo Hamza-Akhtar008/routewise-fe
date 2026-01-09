@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MedixPro - Clinic Management System",
-  description: "Modern clinic management system for healthcare professionals",
+  title: "RouteWise - Fleet Management System",
+  description: "Modern fleet management system for logistics professionals",
 };
 
 export default function RootLayout({
