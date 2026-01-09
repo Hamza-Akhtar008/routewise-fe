@@ -75,63 +75,59 @@ export default function DashboardPage() {
 
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="bg-white dark:bg-background shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="flex flex-col gap-1">
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Active Drivers</span>
-              <span className="text-3xl font-bold">3</span>
-            </div>
-            <div className="h-10 w-10 bg-purple-600 rounded-lg flex items-center justify-center text-white">
-              <Users className="h-5 w-5" />
-            </div>
+        {/* Active Drivers */}
+        <Card className="border bg-white dark:bg-background shadow-sm hover:shadow-md transition">
+          <CardHeader className="flex flex-col items-start gap-1">
+            <Users className="h-6 w-6 text-green-600" />
+            <CardTitle className="text-base font-semibold text-foreground">Active Drivers</CardTitle>
+            <p className="text-muted-foreground text-sm">
+              <span className="text-green-600">+12.5%</span> from last month
+            </p>
           </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground font-mono">3 total</p>
+          <CardContent className="flex flex-col gap-2 mt-2 !pt-0">
+            <h3 className="text-4xl font-bold text-foreground">+2,350</h3>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-background shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="flex flex-col gap-1">
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Active Routes</span>
-              <span className="text-3xl font-bold">3</span>
-            </div>
-            <div className="h-10 w-10 bg-orange-500 rounded-lg flex items-center justify-center text-white">
-              <MapPin className="h-5 w-5" />
-            </div>
+        {/* Active Routes */}
+        <Card className="border bg-white dark:bg-background shadow-sm hover:shadow-md transition">
+          <CardHeader className="flex flex-col items-start gap-1">
+            <MapPin className="h-6 w-6 text-[#3b82f6]" />
+            <CardTitle className="text-base font-semibold text-foreground">Active Routes</CardTitle>
+            <p className="text-muted-foreground text-sm">
+              <span className="text-[#3b82f6]">+4.3%</span> from last month
+            </p>
           </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground font-mono">3 total</p>
+          <CardContent className="flex flex-col gap-2 mt-2 !pt-0">
+            <h3 className="text-4xl font-bold text-foreground">+12,234</h3>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-background shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="flex flex-col gap-1">
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Today's Runs</span>
-              <span className="text-3xl font-bold">3</span>
-            </div>
-            <div className="h-10 w-10 bg-blue-500 rounded-lg flex items-center justify-center text-white">
-              <Calendar className="h-5 w-5" />
-            </div>
+        {/* Today's Runs */}
+        <Card className="border bg-white dark:bg-background shadow-sm hover:shadow-md transition">
+          <CardHeader className="flex flex-col items-start gap-1">
+            <Calendar className="h-6 w-6 text-[#e4940b]" />
+            <CardTitle className="text-base font-semibold text-foreground">Today's Runs</CardTitle>
+            <p className="text-muted-foreground text-sm">
+              <span className="text-[#e4940b]">+10.1%</span> from yesterday
+            </p>
           </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground font-mono">1 in progress</p>
+          <CardContent className="flex flex-col gap-2 mt-2 !pt-0">
+            <h3 className="text-4xl font-bold text-foreground">+12,234</h3>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-background shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="flex flex-col gap-1">
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Weekly Fuel Cost</span>
-              <span className="text-3xl font-bold">$242.00</span>
-            </div>
-            <div className="h-10 w-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
-              <Fuel className="h-5 w-5" />
-            </div>
+        {/* Weekly Fuel Cost */}
+        <Card className="border bg-white dark:bg-background shadow-sm hover:shadow-md transition">
+          <CardHeader className="flex flex-col items-start gap-1">
+            <Fuel className="h-6 w-6 text-[#a855f7]" />
+            <CardTitle className="text-base font-semibold text-foreground">Weekly Fuel Cost</CardTitle>
+            <p className="text-muted-foreground text-sm">
+              <span className="text-[#a855f7]">-2.4%</span> from last week
+            </p>
           </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground font-mono">This week</p>
+          <CardContent className="flex flex-col gap-2 mt-2 !pt-0">
+            <h3 className="text-4xl font-bold text-foreground">$45,231.89</h3>
           </CardContent>
         </Card>
       </div>
