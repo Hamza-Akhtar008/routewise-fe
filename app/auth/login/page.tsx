@@ -46,7 +46,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-950 px-4 py-12">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-2">MedixPro</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-2">RouteWise</h2>
           <p className="mt-2 text-gray-400">Healthcare administration simplified</p>
         </div>
 

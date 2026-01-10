@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RouteWise - Fleet Management System",
-  description: "Modern fleet management system for logistics professionals",
+  title: "RouteWise",
+  description: "Modern - Vehicle Management System",
 };
 
 export default function RootLayout({

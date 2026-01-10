@@ -22,7 +22,7 @@ export function ComposeEmailModal({ isOpen, onClose, onSend }: ComposeEmailModal
     if (!to) return
 
     onSend({
-      from: "dr.johnson@medixpro.com", // Hardcoded sender for demo
+      from: "dr.johnson@RouteWise.com", // Hardcoded sender for demo
       to,
       subject,
       body,

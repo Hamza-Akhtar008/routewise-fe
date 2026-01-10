@@ -3,8 +3,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import logo from "@/public/icon.png";
-import { Ambulance, BarChart3, Bed, Building2, Calendar, Calendar1, CheckCircle2, Droplet, FileText, Grid, HelpCircle, LayoutDashboard, Mail, MessageCircle, MessageSquare, Package, Pill, Receipt, Settings, ShieldCheck, Star, UserCog, UserRound, Users, X } from "lucide-react";
+import logoDark from "@/public/Routewise_dark.png";
+import logoLight from "@/public/Routewise_light.png";
+import { AlertTriangle, Ambulance, BarChart3, Bed, BookOpen, Building2, Calendar, Calendar1, CalendarOff, CheckCircle2, Droplet, FileText, Fuel, Grid, HelpCircle, LayoutDashboard, Mail, MessageCircle, MessageSquare, Package, Pill, Receipt, Route, Settings, ShieldCheck, Star, UserCog, UserRound, Users, Wallet, Wrench, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,166 +28,86 @@ interface SidebarItem {
 export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const pathname = usePathname();
   const isMobile = useMobile();
+  const { resolvedTheme } = useTheme();
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
+  // Use light logo for dark mode, dark logo for light mode
+  const currentLogo = resolvedTheme === "light" ? logoLight : logoDark;
 
   const sidebarItems: SidebarItem[] = [
     {
       title: "Dashboard",
-      href: "/",
+      href: "/admin-dashboard",
       icon: LayoutDashboard,
+
     },
     {
-      title: "Doctors",
-      href: "/doctors",
-      icon: Users,
-      submenu: [
-        { title: "Doctors List", href: "/doctors" },
-        { title: "Add Doctor", href: "/doctors/add" },
-        { title: "Doctor Schedule", href: "/doctors/schedule" },
-        { title: "Specializations", href: "/doctors/specializations" },
-      ],
+      title: "Tasks",
+      href: "/admin-dashboard/tasks",
+      icon: CheckCircle2,
     },
     {
-      title: "Patients",
-      href: "/patients",
-      icon: UserRound,
+      title: "Employee",
+      href: "/admin-dashboard/staff",
+      icon: UserCog,
+
     },
     {
-      title: "Appointments",
-      href: "/appointments",
+      title: "Schedule",
+      href: "/admin-dashboard/schedule/calendar",
       icon: Calendar,
       submenu: [
-        { title: "All Appointments", href: "/appointments" },
-        { title: "Add Appointment", href: "/appointments/add" },
-        { title: "Calendar View", href: "/appointments/calendar" },
-        { title: "Appointment Requests", href: "/appointments/requests" },
+        { title: "List View", href: "/admin-dashboard/schedule" },
+
+        { title: "Calendar View", href: "/admin-dashboard/schedule/calendar" },
+
       ],
     },
     {
-      title: "Prescriptions",
-      href: "/prescriptions",
-      icon: Pill,
-      submenu: [
-        { title: "All Prescriptions", href: "/prescriptions" },
-        { title: "Create Prescription", href: "/prescriptions/create" },
-        { title: "Medicine Templates", href: "/prescriptions/templates" },
-      ],
+      title: "PTO Tracker",
+      href: "/admin-dashboard/pto",
+      icon: CalendarOff,
     },
     {
-      title: "Ambulance",
-      href: "/ambulance",
-      icon: Ambulance,
-      submenu: [
-        { title: "Ambulance Call List", href: "/ambulance/calls" },
-        { title: "Ambulance List", href: "/ambulance/list" },
-        { title: "Ambulance Details", href: "/ambulance/details" },
-      ],
+      title: "Fuel Tracker",
+      href: "/admin-dashboard/fuel-tracker",
+      icon: Fuel,
     },
     {
-      title: "Pharmacy",
-      href: "/pharmacy/medicines",
-      icon: Pill,
+      title: "Maintenance",
+      href: "/admin-dashboard/maintenance",
+      icon: Wrench,
     },
+
     {
-      title: "Blood Bank",
-      href: "/blood-bank",
-      icon: Droplet,
-      submenu: [
-        { title: "Blood Stock", href: "/blood-bank/stock" },
-        { title: "Blood Donor", href: "/blood-bank/donors" },
-        { title: "Blood Issued", href: "/blood-bank/issued" },
-        { title: "Add Blood Unit", href: "/blood-bank/add" },
-        { title: "Issue Blood", href: "/blood-bank/issue" },
-      ],
-    },
-    {
-      title: "Billing",
-      href: "/billing",
+      title: "Payroll",
+      href: "/admin-dashboard/payroll",
       icon: Receipt,
-      submenu: [
-        { title: "Invoices List", href: "/billing" },
-        { title: "Create Invoice", href: "/billing/create" },
-        { title: "Payments History", href: "/billing/payments" },
-        { title: "Insurance Claims", href: "/billing/insurance" },
-      ],
     },
     {
-      title: "Departments",
-      href: "/departments",
-      icon: Building2,
-      submenu: [
-        { title: "Department List", href: "/departments" },
-        { title: "Add Department", href: "/departments/add" },
-        { title: "Services Offered", href: "/departments/services" },
-      ],
+      title: "Expenses",
+      href: "/admin-dashboard/expenses",
+      icon: Wallet,
     },
     {
-      title: "Inventory",
-      href: "/inventory",
-      icon: Package,
-      submenu: [
-        { title: "Inventory List", href: "/inventory" },
-        { title: "Add Item", href: "/inventory/add" },
-        { title: "Stock Alerts", href: "/inventory/alerts" },
-        { title: "Suppliers List", href: "/inventory/suppliers" },
-      ],
+      title: "Routes",
+      href: "/admin-dashboard/routes",
+      icon: Route,
     },
     {
-      title: "Staff",
-      href: "/staff",
-      icon: UserCog,
-      submenu: [
-        { title: "All Staff", href: "/staff" },
-        { title: "Add Staff", href: "/staff/add" },
-        { title: "Roles & Permissions", href: "/staff/roles" },
-        { title: "Attendance", href: "/staff/attendance" },
-      ],
+      title: "Accidents",
+      href: "/admin-dashboard/accidents",
+      icon: AlertTriangle,
     },
     {
-      title: "Records",
-      href: "/records",
-      icon: FileText,
-      submenu: [
-        { title: "Birth Records", href: "/records/birth" },
-        { title: "Death Records", href: "/records/death" },
-      ],
+      title: "Handbook",
+      href: "/admin-dashboard/handbook",
+      icon: BookOpen,
     },
     {
-      title: "Room Allotment",
-      href: "/rooms",
-      icon: Bed,
-      submenu: [
-        { title: "Alloted Rooms", href: "/rooms/alloted" },
-        { title: "New Allotment", href: "/rooms/new" },
-        { title: "Rooms by Department", href: "/rooms/departments" },
-        { title: "Add New Room", href: "/rooms/add" },
-      ],
-    },
-    {
-      title: "Reviews",
-      href: "/reviews",
-      icon: Star,
-      submenu: [
-        { title: "Doctor Reviews", href: "/reviews/doctors" },
-        { title: "Patient Reviews", href: "/reviews/patients" },
-      ],
-    },
-    {
-      title: "Feedback",
-      href: "/feedback",
-      icon: MessageSquare,
-    },
-    {
-      title: "Reports",
-      href: "/reports",
-      icon: BarChart3,
-      submenu: [
-        { title: "Overview", href: "/reports" },
-        { title: "Appointment Reports", href: "/reports/appointments" },
-        { title: "Financial Reports", href: "/reports/financial" },
-        { title: "Inventory Reports", href: "/reports/inventory" },
-        { title: "Patient Visit Reports", href: "/reports/patients" },
-      ],
+      title: "Chat",
+      href: "/chat",
+      icon: MessageCircle,
     },
     {
       title: "Settings",
@@ -198,53 +120,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         { title: "Integrations", href: "/settings/integrations" },
       ],
     },
-    {
-      title: "Authentication",
-      href: "/auth",
-      icon: ShieldCheck,
-      submenu: [
-        { title: "Login", href: "/auth/login" },
-        { title: "Register", href: "/auth/register" },
-        { title: "Forgot Password", href: "/auth/forgot-password" },
-        { title: "Profile Settings", href: "/profile" },
-      ],
-    },
 
-    {
-      title: "Calendar",
-      href: "/calendar",
-      icon: Calendar1,
-    },
-    {
-      title: "Tasks",
-      href: "/tasks",
-      icon: CheckCircle2,
-    },
-    {
-      title: "Contacts",
-      href: "/contact",
-      icon: UserRound,
-    },
-    {
-      title: "Email",
-      href: "/email",
-      icon: Mail,
-    },
-    {
-      title: "Chat",
-      href: "/chat",
-      icon: MessageCircle,
-    },
-    {
-      title: "Support",
-      href: "/support",
-      icon: HelpCircle,
-    },
-    {
-      title: "Widgets",
-      href: "/widgets",
-      icon: Grid,
-    },
   ];
 
   const toggleSubmenu = (title: string) => {
@@ -275,8 +151,8 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     <aside className={sidebarClasses}>
       <div className="flex py-3 xl:py-3.5 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={logo} alt="Medixpro" width={36} height={36} />
-          <span className="font-bold inline-block">MedixPro</span>
+          <Image src={currentLogo} alt="RouteWise" width={50} height={50} />
+          <span className="font-bold inline-block">RouteWise</span>
         </Link>
         <Button variant="ghost" size="icon" className="xl:hidden" onClick={() => setIsOpen(false)}>
           <X className="size-6" />
@@ -342,12 +218,12 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       <div className="border-t p-4 shrink-0">
         <div className="flex items-center gap-3">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="/placeholder-user.jpg" alt="Dr. Sarah Johnson" />
-            <AvatarFallback>SJ</AvatarFallback>
+            <AvatarImage src="/placeholder-user.jpg" alt="Admin" />
+            <AvatarFallback>RW</AvatarFallback>
           </Avatar>
           <div className="space-y-0.5">
-            <p className="text-sm font-medium">Dr. Sarah Johnson</p>
-            <p className="text-xs text-muted-foreground">Administrator</p>
+            <p className="text-sm font-medium">Admin</p>
+            <p className="text-xs text-muted-foreground">Route Wise</p>
           </div>
         </div>
       </div>

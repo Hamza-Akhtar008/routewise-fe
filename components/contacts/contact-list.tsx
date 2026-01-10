@@ -15,7 +15,7 @@ import {
 import { MoreHorizontal, Pencil, Trash2 } from "lucide-react"
 import { EditContactModal } from "./edit-contact-modal"
 import { DeleteContactDialog } from "./delete-contact-dialog"
-import { Contact } from "@/app/(dashboards)/contact/page"
+import { Contact } from "@/app/(dashboard)/contact/page"
 
 
 
